@@ -1,0 +1,128 @@
+---
+title: "Bourzikas_Unit 3 Homework"
+author: "Grant Bourzikas"
+date: "9/17/2018"
+assignment:
+output: html_document
+---
+
+Setup R Enviornment
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plyr)
+```
+
+## Question 1.  Get Cloning
+```{r include=TRUE}
+
+# ls
+# cd OneDrive\ -\ McAfee/Documents/SMU/6306\ -\ DDS\ -\ F18/Unit\ 3/
+# mkdir APD
+# cd APD
+# git clone https://github.com/caesar0301/awesome-public-datasets""
+```
+
+## Quetsion 1.  Data Summary
+### A. Read Data In
+```{r include=TRUE}
+df <- read.csv("~/OneDrive - McAfee/Documents/SMU/6306 - DDS - F18/Unit 3/awesome-public-datasets/Datasets/titanic.csv")
+```
+
+### B. Count Males and Femals and Plot Frequency
+```{r include=TRUE}
+df_Sex <- table(df$Sex)
+head(df_Sex)
+op <- par(mar=c(4,15,2,1), las= 2)
+barplot(df_Sex,
+          main = "Males vs Females on the Titanic", 
+          xlab="Males", 
+          ylab="Females", 
+          col='Firebrick')
+```
+
+### C. Use Apply Functions
+```{r include=TRUE}
+df2.df <- data.frame(df$Age, df$Fare, df$Survived)
+df_Sapply <- sapply(df2.df,na.rm=TRUE, mean)
+```
+
+## 3.	Function Building 
+### A. Summary Level Data on Sleep Data
+```{r include=TRUE}
+sleep <- read.csv("~/OneDrive - McAfee/Documents/SMU/6306 - DDS - F18/Unit 3/APD/sleep_data_01.csv")
+summary(sleep)
+mean(sleep$RSES, na.rm = TRUE)
+sd(sleep$RSES, na.rm = TRUE)
+
+```
+
+### B. Dataframe Object Summary
+```{r include=TRUE}
+sleep_Med <-- median(sleep$Age, na.rm = TRUE)
+sleep_Min <-- min(sleep$RSES, na.rm = TRUE)
+sleep_Max <-- max(sleep$RSES, na.rm = TRUE)
+sleep_mean <-- mean(sleep$Age, na.rm = TRUE)
+sleep_sd <-- sd(sleep$RSES, na.rm = TRUE)
+sleep_Range <-- range(sleep$Duration, na.rm = TRUE)
+report <- data.frame(sleep_Med, sleep_mean/5, sleep_sd/5, sleep_Range)
+round(report, digits=2)
+
+```
+
+## 4.	FiveThirtyEight Data
+### A. Install fivethirtyeight package
+```{r include=TRUE}
+library(fivethirtyeight)
+```
+
+### B. Assign 22nd Dataset
+```{r include=TRUE}
+df <- college_recent_grads
+```
+
+### C. Comment to URL
+```{r include=TRUE}
+# https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/
+```
+
+### D. Dimensions and column names
+```{r include=TRUE}
+dim(df)
+names(df)
+```
+
+
+## Data Summary
+### A. Column Names and Column Counts
+```{r include=TRUE}
+names(df)
+ncol(df)
+```
+
+### B. Major Catagory
+```{r include=TRUE}
+major_count <- count(df, 'major_category')
+major_count
+```
+
+### C. Bar Plot of Major Catagories
+```{r include=TRUE}
+op <- par(mar=c(4,15,2,1), las= 2)
+barplot(
+    height=major_count$freq,
+    names.arg = major_count$major_category,
+    horiz = TRUE,
+    main = 'The  Guide To Picking A College Major',
+    xlab = 'Frequency',
+    ylab = 'Catagory',
+    col = 'FireBrick')
+
+```
+
+### D. Write CSV
+```{r include=TRUE}
+write.csv(df, file = 'collegeGradStudentsF.csv',row.names = FALSE)
+```
+
+## Question 3 Codebook
+https://github.com/gbourzikas/DDS6306/blob/master/README.md
