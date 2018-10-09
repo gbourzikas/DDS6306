@@ -269,7 +269,7 @@ As the company begins to sift through all the data, there are multiple approache
 Overall, with all the of the information contained in the report, we believe that BeerMeUp is in a good competitive situation because of the forward thinking approach using data science techniques to gain even more market share.
 
 ## Appendix - Reference Materal
-*  YouTube Video - https://studio.youtube.com/#/channel/UCOUGjD8v1sf84pBwjLyBn7Q
+*  YouTube Video - https://www.youtube.com/watch?v=lHg6BHJf-y4?t=0m0s
 *  Project Files - https://github.com/gbourzikas/DDS6306/tree/master/Project1
 
 ```
