@@ -7,4 +7,5 @@ Within this directory, there are many files
   - RMarkdown File for HTML Presentation that includes R Code - Bourzikas_DDS_Project1_SOLO.Rmd
   - Data Files for Usage to reproduce the analysis
   - Codebooks for the key functions
+  - Rubric for Class that outlines the Project
   
