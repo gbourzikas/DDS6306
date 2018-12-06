@@ -37,4 +37,4 @@ Other sources:
   * Csv file output of label predictions
   * HTML file
   * PowerPoint
-      - The Last side on the powerpoint will have the YouTube video link
+      - The Last side on the powerpoint,Github Directory and will have the YouTube video link
